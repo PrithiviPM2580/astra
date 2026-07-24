@@ -16,13 +16,18 @@
   },
   "linter": {
     "enabled": true,
+
     "rules": {
+      "a11y": {
+        "useSemanticElements": "off"
+      },
       "style": {
         "noNonNullAssertion": "off"
       },
       "recommended": true,
       "suspicious": {
-        "noUnknownAtRules": "off"
+        "noUnknownAtRules": "off",
+        "noArrayIndexKey": "off"
       }
     },
     "domains": {
