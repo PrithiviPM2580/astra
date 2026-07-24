@@ -1,5 +1,4 @@
 import AppSidebar from "@/components/dashboard/app-sidebar";
-import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -8,6 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;

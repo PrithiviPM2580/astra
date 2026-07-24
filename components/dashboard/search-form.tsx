@@ -1,11 +1,11 @@
-import { SidebarGroup, SidebarGroupContent } from "@/components/ui/sidebar";
+import { SearchIcon } from "lucide-react";
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
 } from "@/components/ui/input-group";
-import { SearchIcon } from "lucide-react";
 import { Kbd } from "@/components/ui/kbd";
+import { SidebarGroup, SidebarGroupContent } from "@/components/ui/sidebar";
 
 export default function SearchForm({ ...props }: React.ComponentProps<"form">) {
   return (

@@ -1,6 +1,5 @@
 "use client";
 
-import SearchForm from "./search-form";
 import {
   Sidebar,
   SidebarContent,
@@ -8,12 +7,13 @@ import {
   SidebarHeader,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import Logo from "../logo";
 import { NAVMAIN } from "@/lib/constants";
-import NavMenu from "./nav-menu";
-import NavUser from "./nav-user";
-import NavNotes from "./nav-notes";
+import Logo from "../logo";
 import { Separator } from "../ui/separator";
+import NavMenu from "./nav-menu";
+import NavNotes from "./nav-notes";
+import NavUser from "./nav-user";
+import SearchForm from "./search-form";
 
 const data = {
   user: {

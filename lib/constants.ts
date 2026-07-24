@@ -1,10 +1,10 @@
-import type { NavItem } from "@/types";
 import {
-  HouseIcon,
   BoltIcon,
-  DockIcon,
   BotMessageSquareIcon,
+  DockIcon,
+  HouseIcon,
 } from "lucide-react";
+import type { NavItem } from "@/types";
 
 export const NAVMAIN: NavItem[] = [
   {

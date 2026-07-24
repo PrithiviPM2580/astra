@@ -6,9 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "check": "biome check --write",
+    "check": "biome check --write .",
     "lint": "biome check",
-    "format": "biome format --write",
+    "format": "biome format --write .",
     "ui:add": "bunx --bun shadcn@latest add",
     "db:generate": "prisma generate",
     "db:studio": "prisma studio"
