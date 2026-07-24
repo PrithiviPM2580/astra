@@ -1,7 +1,7 @@
-export default function DashboardLayout({
-  children,
-}: Readonly<{
+interface DashboardLayoutProps {
   children: React.ReactNode;
-}>) {
+}
+
+export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return children;
 }
