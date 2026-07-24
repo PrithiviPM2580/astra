@@ -9,7 +9,7 @@ interface LogoProps {
 }
 
 export default function Logo({
-  title = "Astra logo",
+  title = "Astra",
   className,
   color = "currentColor",
   size = "size-12",
