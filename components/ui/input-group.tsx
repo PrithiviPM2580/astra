@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/a11y/useKeyWithClickEvents: <explanation> */
 "use client";
 
 import { cva, type VariantProps } from "class-variance-authority";

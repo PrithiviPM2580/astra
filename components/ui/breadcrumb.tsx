@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/a11y/useFocusableInteractive: <explanation> */
 import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
 import { ChevronRightIcon, MoreHorizontalIcon } from "lucide-react";
