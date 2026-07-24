@@ -212,6 +212,11 @@
   h5 {
     @apply text-lg sm:text-xl lg:text-2xl font-medium leading-normal;
   }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
 @layer components {

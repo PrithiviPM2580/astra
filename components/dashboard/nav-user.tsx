@@ -1,14 +1,8 @@
 "use client";
 
-import {
-  BadgeCheck,
-  Bell,
-  ChevronsUpDown,
-  CreditCard,
-  LogOut,
-  Sparkles,
-} from "lucide-react";
-
+import { ChevronsUpDown, CreditCard, LogOut } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useTransition } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -25,6 +19,8 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import { authClient } from "@/lib/auth-client";
+import { toast } from "../ui/toast";
 
 export default function NavUser({
   user,
@@ -35,7 +31,32 @@ export default function NavUser({
     avatar: string;
   };
 }) {
+  const [isPending, startTransition] = useTransition();
+  const router = useRouter();
   const { isMobile } = useSidebar();
+
+  function onLogout() {
+    startTransition(async () => {
+      await authClient.signOut({
+        fetchOptions: {
+          onSuccess: () => {
+            toast.add({
+              type: "success",
+              description: "Logged out successfully.",
+            });
+            router.push("/sign-in");
+          },
+          onError: ({ error }) => {
+            toast.add({
+              type: "error",
+              description:
+                error?.message || "Error occurred while logging out.",
+            });
+          },
+        },
+      });
+    });
+  }
 
   return (
     <SidebarMenu>
@@ -82,29 +103,15 @@ export default function NavUser({
               </DropdownMenuLabel>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <Sparkles />
-                Upgrade to Pro
-              </DropdownMenuItem>
-            </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <BadgeCheck />
-                Account
-              </DropdownMenuItem>
               <DropdownMenuItem>
                 <CreditCard />
                 Billing
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Bell />
-                Notifications
-              </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={onLogout} disabled={isPending}>
               <LogOut />
               Log out
             </DropdownMenuItem>
